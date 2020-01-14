@@ -22,16 +22,13 @@ install_tfsec() {
 }
 
 get_arch() {
-  uname | tr '[:upper:]' '[:lower:]'
+    echo "$(uname | tr '[:upper:]' '[:lower:]')-amd64"
 }
 
 get_download_url() {
   local version="$1"
   local platform
   platform="$(get_arch)"
-  if [ "$platform" = "linux" ]; then
-    platform="${platform}-amd64"
-  fi
   echo "https://github.com/liamg/tfsec/releases/download/v${version}/tfsec-${platform}"
 }
 
