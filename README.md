@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-asdf plugin-add terraform-docs https://github.com/woneill/asdf-tfsec
+asdf plugin-add tfsec https://github.com/woneill/asdf-tfsec
 ```
 
 ## Use
