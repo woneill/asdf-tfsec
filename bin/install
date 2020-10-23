@@ -29,7 +29,7 @@ get_download_url() {
   local version="$1"
   local platform
   platform="$(get_arch)"
-  echo "https://github.com/liamg/tfsec/releases/download/v${version}/tfsec-${platform}"
+  echo "https://github.com/tfsec/tfsec/releases/download/v${version}/tfsec-${platform}"
 }
 
 install_tfsec "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
