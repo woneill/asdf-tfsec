@@ -22,14 +22,29 @@ install_tfsec() {
 }
 
 get_arch() {
-    echo "$(uname | tr '[:upper:]' '[:lower:]')-amd64"
+    echo "$(uname | tr '[:upper:]' '[:lower:]')"
+}
+
+get_cpu() {
+  local machine_hardware_name
+  machine_hardware_name=${ASDF_TFSEC_OVERWRITE_ARCH:-"$(uname -m)"}
+
+  case "$machine_hardware_name" in
+    'x86_64') local cpu_type="amd64" ;;
+    'aarch64') local cpu_type="arm64" ;;
+    *) local cpu_type="$machine_hardware_name" ;;
+  esac
+
+  echo "$cpu_type"
 }
 
 get_download_url() {
   local version="$1"
   local platform
   platform="$(get_arch)"
-  echo "https://github.com/aquasecurity/tfsec/releases/download/v${version}/tfsec-${platform}"
+  local cpu
+  cpu=$(get_cpu)
+  echo "https://github.com/aquasecurity/tfsec/releases/download/v${version}/tfsec-${platform}-${cpu}"
 }
 
 install_tfsec "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
