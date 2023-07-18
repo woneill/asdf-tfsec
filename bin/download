@@ -14,5 +14,5 @@ mkdir -p "$ASDF_DOWNLOAD_PATH"
 
 # Download release file to the download directory
 # download_release "$ASDF_INSTALL_VERSION" "$release_file"
-download_release "$ASDF_INSTALL_VERSION" "$ASDF_DOWNLOAD_PATH"
+download_release "$ASDF_INSTALL_VERSION" "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
 # chmod +x "$release_file"
