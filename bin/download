@@ -8,4 +8,9 @@ plugin_dir=$(dirname "$(dirname "$current_script_path")")
 # shellcheck source=../lib/utils.bash
 source "${plugin_dir}/lib/utils.bash"
 
-list_all_versions | sort_versions | xargs echo
+mkdir -p "$ASDF_DOWNLOAD_PATH"
+
+release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME-$ASDF_INSTALL_VERSION"
+
+# Download release file to the download directory
+download_release "$ASDF_INSTALL_VERSION" "$release_file"
