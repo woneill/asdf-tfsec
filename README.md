@@ -1,5 +1,7 @@
 <div align="center">
 
+**DEPRECATED - This is no longer maintained**
+
 # asdf-tfsec [![Build](https://github.com/woneill/asdf-tfsec/actions/workflows/build.yml/badge.svg)](https://github.com/woneill/asdf-tfsec/actions/workflows/build.yml) [![Lint](https://github.com/woneill/asdf-tfsec/actions/workflows/lint.yml/badge.svg)](https://github.com/woneill/asdf-tfsec/actions/workflows/lint.yml)
 
 [tfsec](https://aquasecurity.github.io/tfsec) plugin for the [asdf version manager](https://asdf-vm.com).
